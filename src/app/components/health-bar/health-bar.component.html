@@ -1,0 +1,23 @@
+<div class="d-flex align-items-center">
+    <button
+        class="btn btn-danger mx-2 fw-bold"
+        (click)="decrementHealth()"
+        [disabled]="disable"
+    >-</button>
+    <div class="col text-center">
+        <div class="progress" style="height: 25px;">
+            <div
+            (click)="decrementHealth()"
+            class="progress-bar fw-bold {{getCouleur()}}"
+            role="progressbar"
+            [ngStyle]="{ width: (100*getCharactere().currentHealth/getCharactere().health) +'%' }"
+            aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">{{getCharactere().currentHealth}}</div>
+        </div>
+    </div>
+    <button
+        class="btn btn-success mx-2 fw-bold"
+        (click)="incrementHealth()"
+        [disabled]="disable"
+    >+</button>
+</div>

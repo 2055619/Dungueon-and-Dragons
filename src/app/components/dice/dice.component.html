@@ -1,0 +1,24 @@
+<form>
+    <div class="input-group">
+        <input class="form-control me-2" type="text" placeholder="ex: 3d4+2d10" aria-label="Dés"
+            value="3d4+2d10"
+            name="des"
+            [(ngModel)]="desExpression">
+        <button class="btn btn-success" type="submit"
+        (click)="lanceDesAsync()"
+        >Lancer</button>
+    </div>
+    <div *ngIf="valid; else invalidText">
+        <button class="btn btn-large bg-warning m-1"
+        *ngFor="let item of jetDeDes"
+        >
+            <span class="h2">{{item.val}}</span>
+            <span class="h6 text-secondary">/{{item.desize}}</span>
+        </button>
+        
+    </div>
+</form>
+
+<ng-template #invalidText>
+    <p class="text-danger">Invalid Dice</p>
+</ng-template>

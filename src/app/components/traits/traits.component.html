@@ -1,0 +1,15 @@
+<h3 class="text-white text-center mb-3 mt-4">Traits de personnage</h3>
+<div class="overflow-auto traits-personnage">
+    <div class="card mt-3">
+        <div class="card-body"
+        *ngFor="let trait of getTrait()"
+        >
+            <h5 class="card-title">
+                {{trait.name}}
+            </h5>
+            <p class="card-text">
+                {{trait.desc}}
+            </p>
+        </div>
+    </div>
+</div>

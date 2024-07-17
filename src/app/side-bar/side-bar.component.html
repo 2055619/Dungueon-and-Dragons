@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md navbar-light">
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <div class="container-fluid">
+      <div class="row">
+
+<!-- Medium et plus -->
+<div class="col-xl-3 col-lg-4 col-md-4 bg-dark mt-5 fixed-top not-fixed-sm">
+    <div class="row align-items-start flex-column vh-100 not-fixed-sm">
+        <div class="row mt-md-0 mt-5">
+        </div>
+        <div class="col-12 my-1 d-lg-inline d-none">
+            <img [src]="getImage()" width="200px" class="m-3 img-responsive">
+        </div>
+        <div class="col-12 my-1">
+            <ul class="nav navbar-nav nav-pills flex-column me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" aria-current="page" routerLink="/dungeon/personnage" routerLinkActive="active">Personnage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/dungeon/magasin" routerLinkActive="active">Magasin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/dungeon/compendium" routerLinkActive="active">Compendium</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/dungeon/inventaire" routerLinkActive="active">Gestion
+                        Inventaire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/dungeon/carte" routerLinkActive="active">Carte</a>
+                </li>
+            </ul>
+        </div>
+        <!--  Dés  -->
+        <div class="col-12 my-1 d-md-inline d-none d-overflow-auto"
+        style="max-height: 30%; overflow: auto"
+        >
+            <app-dice></app-dice>
+        </div>
+        <!--  Dés End  -->
+        <div class="col-12 mt-md-auto mb-md-5 align-item-bottom">
+            <ul class="nav navbar-nav nav-pills flex-column me-auto mb-md-2 mb-lg-0">
+                <li class="nav-item mb-5">
+                    <a class="nav-link text-white" routerLink="/dungeon/administration"
+                        routerLinkActive="active">Administration</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,13 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<div class="row text-light">
+  <a class="col-1 ms-2 " routerLink="/portfolio"><i class="fa-sharp fa-solid fa-house-user fa-3x text-warning"></i></a>
+
+  <select id="nomPersonnage" class="form-select badge w-50 bg-light text-dark ms-5 mt-1" [(ngModel)]="lePerso" (ngModelChange)="persoChoisi()">
+    <option class="fw-bold" [value]="per.id" *ngFor="let per of getPerso() | async">{{per.name}}</option>
+  </select>
+</div>
+
+
+
+<!--  <h1 class="display-5 ms-sm-3 col">Xefoul Snaromers</h1>-->

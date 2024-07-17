@@ -1,0 +1,47 @@
+<!-- Sort -->
+<h3 class="text-white text-center mb-3 mt-4">Sorts</h3>
+<div class="accordion m-2" id="accordion-spells">
+
+    <div class="accordion-item" *ngFor="let spell of getSpells(); index as idx">
+        <h2 class="accordion-header" id="heading-{{idx}}">
+            <div class="row bg-dark ">
+                <div class="col-12 d-flex">
+                    <!-- <input type="checkbox" class="form-check-input" name="" id=""> -->
+                    <button class="accordion-button bg-dark text-light  border-4" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+idx" aria-expanded="true" aria-controls="collapse-1">
+                        <div>{{spell.spells.name}}</div>
+                    </button>
+
+                    <input type="checkbox" class="form-check-input" name="" id="" *ngFor="let ready of getSpellCount(spell.qty)">
+                </div>
+            </div>
+        </h2>
+        <div id="collapse-{{idx}}" class="accordion-collapse collapse -show" [attr.aria-labelledby]="'heading-'+idx"
+            data-bs-parent="#accordion-spells">
+            <div class="accordion-body">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <span class="badge bg-primary">
+                                {{spell.spells.school?.name}}
+                                {{displayLevel(spell.spells.level)}}
+                            </span>
+                            <span class="badge bg-danger">Casting Time: {{spell.spells.casting_time}}</span>
+                            <span class="badge bg-success">Range: {{spell.spells.range}}</span>
+                            <span class="badge bg-info">Components:
+                                {{spell.spells.components}}
+                            </span>
+                            <span class="badge bg-secondary">Duration:
+                                {{spell.spells.duration}}
+                            </span>
+                        </p>
+                        <p class="card-text"
+                        *ngFor="let text of spell.spells.desc"
+                        >
+                            {{text}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

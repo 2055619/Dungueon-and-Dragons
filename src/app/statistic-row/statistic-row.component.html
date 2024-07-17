@@ -1,0 +1,12 @@
+<div class="col-2 mt-4" *ngFor="let stat of statLookup">
+    <div class="{{stat.couleur}} mx-xxl-4 mx-3 mx-md-1 rounded-4">
+        <div class="fw-bold">{{stat.prefix}}<span class="d-none d-lg-inline">{{stat.suffix}}</span>
+        </div>
+        <div class="h2">
+            {{getModifier(myCharactere.statistics[stat.prefix])}}
+        </div>
+        <div class="">
+            {{myCharactere.statistics[stat.prefix]}}
+        </div>
+    </div>
+</div>

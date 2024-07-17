@@ -1,0 +1,40 @@
+<div class="container-fluid bg-warning vh-100">
+  <h1 class="display-1">Voici le magasin!</h1>
+  <div class="row">
+
+    <div class="bg-light row" cdkDropListGroup  *ngIf="peutModifier(); else pasModifiable">
+      <h1 class="display-5">Nouvel équipement: </h1>
+      <div id="magAccordeon" class="col-5 accordion"  cdkDropList [cdkDropListData]="getLesEquipements()">
+
+       <div class="accordion-item  col-12" *ngFor="let equip of getLesEquipements()" cdkDrag>
+          <h2 class="accordion-header" id="heading-{{equip.index}}">
+            <button class="accordion-button" (click)="getDescEquipement(equip.url)" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-'+equip.index" aria-expanded="true" aria-controls="collapse-1">
+              <div>{{equip.name}}</div>
+            </button>
+          </h2>
+          <div id="collapse-{{equip.index}}" class="accordion-collapse collapse bg-light -show" [attr.aria-labelledby]="'heading-'+equip.index" data-bs-parent="#magAccordeon">
+            <div class="accordion-body">
+              {{descEquip.value.desc}}
+            </div>
+          </div>
+       </div>
+      </div>
+
+    <div class="col-5 bg-light border-dark bg-danger position-sticky sticky-top">
+      <div class="position-sticky sticky-top" cdkDropList [cdkDropListData]="lesEquipements" (cdkDropListDropped)="drop($event)">
+        <h1 class="display-5">Ajout à l'Inventaire: </h1>
+        <ul class="bg-warning drop-area">
+          <li *ngFor="let equip of lesEquipements">{{equip.name}}</li>
+        </ul>
+      </div>
+      <button class="btn btn-outline-secondary" type="submit" (click)="postNouvelEquipement()">Confirmer l'ajout</button>
+    </div>
+
+  </div>
+</div>
+
+  <ng-template #pasModifiable>
+    <h1 class="display-1">Ceci n'est pas votre personnage!</h1>
+    Vous ne pouvez pas le modifer
+  </ng-template>
+</div>

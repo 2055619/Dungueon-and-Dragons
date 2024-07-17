@@ -1,0 +1,37 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<div class="bg-secondary">
+  <nav class="navbar navbar-expand-md bg-dark text-uppercase fw-bold px-3 text-light navbar-dark sticky-top">
+
+    <a class="navbar-brand"><i class="fas fa-child text-warning fa-2x"></i></a>
+    <button type="button" class="navbar-toggler bg-warning" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="nav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link px-3" [routerLink]="['/portfolio']" fragment="home" routerLinkActive="active">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" [routerLink]="['/portfolio']" fragment="intro" routerLinkActive="active">Intro</a></li>
+
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
+            Projets</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="nav-item"><a class="dropdown-item" routerLink="/portfolio" fragment="projet">Liste des Projets</a></li>
+            <li class="nav-item"><a class="dropdown-item" routerLink="/dungeon/personnage">Dungeon & Dragon</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link px-3" [routerLink]="['/portfolio']" fragment="progres" routerLinkActive="active">Progrès</a></li>
+        <li class="nav-item"><a class="nav-link px-3" [routerLink]="['/portfolio']" fragment="contact" routerLinkActive="active">Contacter</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']"  routerLinkActive="active">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

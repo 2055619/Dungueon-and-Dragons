@@ -1,0 +1,27 @@
+
+<div class="container bg-light p-0 vh-100">
+  <h1 class="display-1">Veuillez vous connecter</h1>
+  <div class="row mb-5">
+    <div class="col-3 mx-auto border border-primary border-3 rounded-5 p-4 mt-5">
+      <label for="username">Username</label>
+      <input id="username" type="text" [(ngModel)]="username" class="form-control">
+      <label for="password">Password</label>
+      <input id="password" type="password" [(ngModel)]="password" class="form-control">
+      <div class="row">
+        <button class="btn btn-outline-primary mt-3" (click)="creeSession()">Login</button>
+      </div>
+      <div class="text-success"
+           *ngIf="loginService.success">
+        Vous êtes bien connecté!
+      </div>
+      <div class="text-danger" *ngIf="loginService.lastError">
+        {{loginService.lastError}}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-secondary mt-5 text-center">
+    <h1 class="display-1">Message que vous avez envoyé</h1>
+    <h2 class="display-5 text-light" *ngFor="let mess of messages | async; index as i">{{mess.message}}</h2>
+  </div>
+</div>

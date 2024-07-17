@@ -1,0 +1,183 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<div id="home" class="bg-primary container-fluid">
+  <div class="row align-items-center vh-100 text-center">
+    <div class="mb-5">
+      <h1 class="text-warning display-1 text-capitalize">Technique de l'informatique</h1>
+      <h2 class="text-light fst-italic fw-light">Cette page est présenté par Louis-Philippe Forget</h2>
+    </div>
+  </div>
+</div>
+
+<section id="intro" class="pt-5 mt-5">
+  <div class="text-center">
+    <h1 class="text-warning display-1">Introduction</h1>
+    <h4 class="text-light">Moi</h4>
+    <p class="text-white">Je suis Louis-Philippe étudiant en technique de l'informatique au cégep André-Laurendeau</p>
+  </div>
+</section>
+
+<div class="container-fluid bg-light py-5">
+  <div class="text-center">
+    <h1 class="text-warning display-1">Aptitudes</h1>
+    <h4 class="text-secondary fw-light">Nous développons plusieurs aptitudes en technologie </h4>
+
+    <div class="row my-4">
+      <div class="col-lg-4 col-md-12 my-md-3">
+        <i class="fa-solid fa-display fa-6x text-warning"></i>
+        <h1>Développement</h1>
+        <p>Ceci est une page web personnel. Plusieurs projets y seront rattaché dont le dernier que j'ai fait.
+          Celui-ci est une page de D&D qui utilise différent API pour charger les personnages d'une
+          partie.</p>
+        <a class="btn btn-outline-warning">Learn More</a>
+      </div>
+
+      <div class="col-lg-4 col-md-12 my-md-3">
+        <i class="fa-regular fa-pen-to-square fa-6x text-warning"></i>
+        <h1>Design</h1>
+        <p>Cette page utilise les designs de Bootstrap v5. Je ne suis bien évidemment pas le meilleur en design :) </p>
+        <a class="btn btn-outline-warning">Learn More</a>
+      </div>
+
+      <div class="col-lg-4 col-md-12 my-md-3">
+        <!--        <i class="fa-solid fa-gears fa-6x text-warning"></i>-->
+        <i class="fa-solid fa-terminal fa-6x text-warning"></i>
+        <h1>Commandes & Requêtes</h1>
+        <p>Dans le programme 420.0 nous utilisons différent système d'exploitation et différente méthode pour stocker
+        des données ce qui nous oblige à apprendre les lignes de commande et les requêtes.</p>
+        <a class="btn btn-outline-warning">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="projet" class="text-center container-fluid pt-5 mt-4">
+  <h1 class="display-1 text-warning">Mes projets</h1>
+  <p class="lead text-light">J'ai eu la chance de faire plusieurs projets en programmation web.</p>
+</div>
+
+<div class="row mx-5 pb-5">
+  <div class="card col-lg-3 col-sm-6 p-0" *ngFor="let projet of lesProjets">
+    <img [src]="projet.image" class="card-img-top" alt="x">
+    <div class="card-body">
+      <h1 class="text-warning my-4">{{projet.titre}}</h1>
+      <p class="text-secondary">{{projet.desc}}</p>
+    </div>
+    <div class="text-end">
+      <a class="btn btn-outline-dark m-2 mt-0" [routerLink]="[projet.lien]">Allez vers ce site</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<section id="progres" class="p-5 bg-white">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col text-center mb-3">
+        <h1 class="text-warning display-2">Progrès</h1>
+        <p class="lead text-secondary">Au cégep, nous apprenons plusieurs languages de programmation, ainsi que des API</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-sm-10 text-secondary">
+        <h2>JAVA</h2>
+        <div class="progress bg-secondary mb-3">
+          <div class="progress-bar" style="width: 70%">
+            70%
+          </div>
+        </div>
+        <h2>SQL</h2>
+        <div class="progress bg-secondary mb-3">
+          <div class="progress-bar bg-danger" style="width: 50%">
+            50%
+          </div>
+        </div>
+        <h2>ANGULAR</h2>
+        <div class="progress bg-secondary mb-3">
+          <div class="progress-bar bg-warning" style="width: 90%">
+            90%
+          </div>
+        </div>
+        <h2>C++</h2>
+        <div class="progress bg-secondary mb-3">
+          <div class="progress-bar bg-success" style="width: 10%">
+            10%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class=" bg-light">
+  <div class="container-fluid">
+    <!-- title -->
+    <div class="row">
+      <div  class="col text-center mb-3">
+        <h1   class="text-warning display-2 text-capitalize">Nous contacter</h1>
+      </div>
+    </div>
+    <!-- end of title -->
+    <div  class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div  class="text-center text-secondary">
+          <h2>Avez-vous des questions?</h2>
+          <p>Rester connecté</p>
+        </div>
+        <form class="text-muted" #nousContacter="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="message.name" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="message.email" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="form-group">
+            <label for="noTel" >Numero de Téléphone</label>
+            <input type="text" class="form-control" id="noTel" [(ngModel)]="message.telephone" [ngModelOptions]="{standalone: true}">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Question & commentaire</label>
+            <textarea class="form-control" id="message" rows="5" [(ngModel)]="message.message" #leMessage="ngModel" required [ngModelOptions]="{standalone: true}"></textarea>
+
+            <ul class="text-danger list-unstyled" *ngIf="leMessage.dirty">
+              <li *ngIf="leMessage.errors?.['required']">
+                You must enter a product name
+              </li>
+              <li *ngIf="leMessage.errors?.['pattern']">
+                Product names can only contain letters and spaces
+              </li>
+            </ul>
+
+      </div>
+          <button class="btn btn-outline-warning btn-block mt-2" type="submit" (click)="send()">Envoyer</button>
+          <button class="btn btn-outline-dark btn-block mt-2 ms-4" routerLink="/login">Voir mes messages</button>
+          <p>{{erreur}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-secondary">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="text-white fw-light text-capitalize p-3">Site web Bootstrap</h1>
+        <h3 class="text-light fw-light fst-italic mb-3">Styles css et certaines fonctionnalités </h3>
+        <div class="py-2">
+          <a target="_blank" href="https://www.facebook.com/groups/88022111041"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+          <a target="_blank" href="https://www.reddit.com/r/CrazyFuckingVideos/comments/yryrfs/jones_bbq_commercial/"><i style="color: rgb(255,100,0)" class="fa-brands fa-reddit fa-2x mx-3"></i></a>
+          <a target="_blank" href="https://twitter.com/elonmusk"><i class="fab fa-twitter fa-2x text-info mx-3"></i></a>
+          <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"><i class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+        </div>
+        <p class="text-light py-4 m-0">&copy;Copyright 2022 - Made by LP-F</p>
+      </div>
+    </div>
+  </div>
+</footer>

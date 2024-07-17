@@ -1,0 +1,27 @@
+            <!-- Armes -->
+            <h3 class="text-white text-center mt-4">Armes</h3>
+            <div
+                class="row bg-white m-2"
+                *ngFor="let equi of equippedArms()"
+                >
+                <div class="col-4">{{equi.equipment.name}}</div>
+                <div class="col-2">{{equi.equipment.variants}}</div>
+                <div class="col-2">
+                    {{equi.equipment.damage?.damage_dice}}
+                    <span
+                    *ngIf="equi.equipment.two_handed_damage"
+                    >
+                        /
+                        {{equi.equipment.two_handed_damage.damage_dice}}
+                    </span>
+                </div>
+                <div class="col-4">
+                    {{equi.equipment.damage?.damage_type?.name}}
+                </div>
+                <div class="col-12" *ngIf="equi.equipment.throw_range !== undefined">
+                    <input
+                    *ngFor="let item of getItemsList(equi.qty)"
+                    class="form-check-input"
+                    type="checkbox">
+                </div>
+            </div>
